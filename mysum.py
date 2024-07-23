@@ -2,7 +2,8 @@
 
 from typing import Sequence, Union
 
-def mysum(numbers:Union[Sequence[float], set[float]]) -> float:
+def mysum(numbers:Union[Sequence[float],
+                        set[float]]) -> float:
     total : float = 0
 
     for one_number in numbers:
@@ -14,3 +15,4 @@ print(mysum([10, 20, 30, 40, 50]))
 print(mysum([10, 20, 30, 40.0, 50]))
 print(mysum((10, 20, 30, 40.0, 50)))
 print(mysum({10, 20, 30, 40.0, 50}))
+print(mysum(['a', 'b', 'c']))
