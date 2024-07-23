@@ -2,7 +2,7 @@
 
 from typing import Sequence, Union
 
-def mysum(*numbers)
+def mysum(*numbers):
     total : float = 0
 
     for one_number in numbers:
