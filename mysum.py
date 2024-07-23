@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
-from typing import Sequence
+from typing import Sequence, Union
 
-def mysum(numbers:Sequence[float]) -> float:
+def mysum(numbers:Union[Sequence[float], set[float]]) -> float:
     total : float = 0
 
     for one_number in numbers:
