@@ -2,8 +2,7 @@
 
 from typing import Sequence, Union
 
-def mysum(numbers:Union[Sequence[float],
-                        set[float]]) -> float:
+def mysum(numbers:Sequence[float]| set[float]) -> float:
     total : float = 0
 
     for one_number in numbers:
