@@ -17,7 +17,7 @@ while s := input('Enter math expression: ').strip():
         second_n = int(second)
 
         if op in ops:
-            result = str(ops[op](first_n, second_n))
+            result = f'{ops[op](first_n, second_n)}'
         else:
             result = f'Bad operator {op}'
 
