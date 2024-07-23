@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-def hello(name:str) -> str:
+def hello(name):
     return f'Hello, {name}!'
 
 print(hello('world'))
