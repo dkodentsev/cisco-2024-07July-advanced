@@ -1,17 +1,13 @@
 #!/usr/bin/env python3
 
-def add(x, y):
+def add(x:float, y:float) -> float:
     return x + y
 
-def sub(x, y):
+def sub(x:float, y:float) -> float:
     return x - y
 
-def mul(x, y):
-    return x * y
-
 ops = {'+':add,
-       '-':sub,
-       '*':mul}
+       '-':sub}
 
 while s := input('Enter math expression: ').strip():
     first, op, second = s.split()
