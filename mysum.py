@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+from typing import Sequence
+
 def mysum(numbers:list[float]) -> float:
     total : float = 0
 
@@ -10,4 +12,4 @@ def mysum(numbers:list[float]) -> float:
 
 print(mysum([10, 20, 30, 40, 50]))
 print(mysum([10, 20, 30, 40.0, 50]))
-print(mysum({10, 20, 30, 40.0, 50}))
+print(mysum((10, 20, 30, 40.0, 50)))
