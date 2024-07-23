@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-def mysum(numbers):
+def mysum(numbers:list) -> int:
     total = 0
 
     for one_number in numbers:
