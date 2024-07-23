@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 def mysum(numbers:list[float]) -> float:
-    total = 0
+    total : float = 0
 
     for one_number in numbers:
         total += one_number
