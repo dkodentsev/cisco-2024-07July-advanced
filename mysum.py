@@ -13,3 +13,4 @@ def mysum(numbers:Sequence[float]) -> float:
 print(mysum([10, 20, 30, 40, 50]))
 print(mysum([10, 20, 30, 40.0, 50]))
 print(mysum((10, 20, 30, 40.0, 50)))
+print(mysum({10, 20, 30, 40.0, 50}))
