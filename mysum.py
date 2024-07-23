@@ -9,4 +9,4 @@ def mysum(numbers:list[int]) -> int:
     return total
 
 print(mysum([10, 20, 30, 40, 50]))
-print(mysum([10, 20, 30, 'a', 50]))
+print(mysum([10, 20, 30, 40.0, 50]))
