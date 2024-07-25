@@ -28,6 +28,7 @@ def get():
         value = q.get()
 
         print(value)
+
         if value == 81:
             break
 
