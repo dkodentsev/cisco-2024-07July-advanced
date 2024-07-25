@@ -12,7 +12,7 @@ from concurrent.futures import ThreadPoolExecutor, wait
 def square(n):
     return n ** 2
 
-with ThreadPoolExecutor(max_workers=10) as executor:
+with ThreadPoolExecutor(max_workers=5) as executor:
     all_results = []
 
     for i in range(10):
