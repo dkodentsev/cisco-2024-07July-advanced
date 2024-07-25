@@ -40,3 +40,6 @@ while threading.active_count() > 1:
         one_thread.join(0.01)  # normally, join blocks
 
 print('Done!')
+
+while not q.empty():
+    print(q.get())
