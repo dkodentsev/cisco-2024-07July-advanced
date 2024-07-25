@@ -8,3 +8,6 @@
 # the style of using ThreadPoolExecutor is more elegant and easier to understand
 
 from concurrent.futures import ThreadPoolExecutor
+
+def square(n):
+    return n ** 2
