@@ -25,7 +25,12 @@ def get():
     while True:
         if q.empty():
             time.sleep(1)
-        print(q.get())
+        value = q.get()
+
+        print(value)
+        if value == 81:
+            break
+
 
 for i in range(10):
     t = threading.Thread(target=add, args=(i,))
