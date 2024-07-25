@@ -22,7 +22,7 @@ for i in range(10):
     all_threads.append(t)
 
 # join them together, meaning: wait for all of them to finish
-for one_thread in all_threads:
-    one_thread.join()   # this blocks
+for one_thread in threading.enumerate():
+    one_thread.join()
 
 print('Done!')
