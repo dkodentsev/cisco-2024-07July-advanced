@@ -20,7 +20,7 @@ q = queue.Queue()     # create a queue onto which functions can put output
 
 def add(n):
     time.sleep(random.randint(0, 2))
-    print('\tPutting {n**2}')
+    print(f'\tPutting {n**2}')
     q.put(n ** 2)
 
 def get():
