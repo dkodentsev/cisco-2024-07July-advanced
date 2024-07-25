@@ -10,10 +10,14 @@ import time
 import random
 import threading
 
+l = threading.Lock()  # create a new lock object
+
 def hello(n):
     time.sleep(random.randint(0, 3))
-    print(f'[{n}] Hello!')
-    print(f'[{n}] Hello again!')
+
+    with l:
+        print(f'[{n}] Hello!')
+        print(f'[{n}] Hello again!')
 
 for i in range(10):
     # create a new Thread object, telling it what function to run
