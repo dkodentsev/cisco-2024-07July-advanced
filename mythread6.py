@@ -31,8 +31,6 @@ def get():
 
         print(f'Got {value}')
 
-        if value == 81:
-            break
 
 
 for i in range(10):
