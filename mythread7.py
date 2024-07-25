@@ -19,4 +19,9 @@ with ThreadPoolExecutor(max_workers=10) as executor:
         result = executor.submit(square, i)  # 1st arg is function, rest are args to it
         all_results.append(result)
 
-    print(all_results)
+    # wait returns two sets, typically called done and not_done
+    # by default, wait will return its results only when all threads are done
+    done, not_done = wait(all_results)
+
+    for one_item in done:
+        print(one_item.result())
