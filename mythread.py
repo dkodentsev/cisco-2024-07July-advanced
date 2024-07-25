@@ -19,3 +19,5 @@ for i in range(10):
     # whatever arguments we want to pass are in the "args" kwargs
     t = threading.Thread(target=hello, args=(i,))
     t.start()
+
+print('Done!')
