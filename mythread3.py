@@ -26,6 +26,6 @@ while threading.active_count() > 1:
     for one_thread in threading.enumerate():
         if one_thread == threading.current_thread():
             continue
-        one_thread.join(0.01)
+        one_thread.join(0.01)  # normally, join blocks
 
 print('Done!')
