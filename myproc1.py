@@ -7,18 +7,20 @@ from concurrent.futures import ProcessPoolExecutor, wait
 def square(n):
     return n ** 2
 
-with ProcessPoolExecutor(max_workers=5) as executor:
-    all_results = []
+if __name__ == '__main__':
 
-    for i in range(10):
-        result = executor.submit(square, i)  # 1st arg is function, rest are args to it
-        all_results.append(result)
+    with ProcessPoolExecutor(max_workers=5) as executor:
+        all_results = []
 
-    # wait returns two sets, typically called done and not_done
-    # by default, wait will return its results only when all threads are done
-    done, not_done = wait(all_results)
+        for i in range(10):
+            result = executor.submit(square, i)  # 1st arg is function, rest are args to it
+            all_results.append(result)
 
-    # done, not_done = wait(all_results, return_when=FIRST_COMPLETED)
+        # wait returns two sets, typically called done and not_done
+        # by default, wait will return its results only when all threads are done
+        done, not_done = wait(all_results)
 
-    for one_item in done:
-        print(one_item.result())
+        # done, not_done = wait(all_results, return_when=FIRST_COMPLETED)
+
+        for one_item in done:
+            print(one_item.result())
