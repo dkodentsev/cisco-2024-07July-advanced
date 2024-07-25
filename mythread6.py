@@ -28,3 +28,5 @@ def get():
 for i in range(10):
     t = threading.Thread(target=add, args=(i,))
     t.start()
+
+threading.Thread(target=get).start()
