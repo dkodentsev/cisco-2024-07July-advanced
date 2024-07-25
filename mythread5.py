@@ -41,5 +41,6 @@ while threading.active_count() > 1:
 
 print('Done!')
 
+# retrieve all of the data from the queue
 while not q.empty():
     print(q.get())
