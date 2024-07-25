@@ -13,15 +13,17 @@
 import time
 import random
 import threading
+import queue
 
 l = threading.Lock()  # create a new lock object
+q = queue.Queue()     # create a queue onto which functions can put output
 
 def hello(n):
     time.sleep(random.randint(0, 3))
 
     with l:
-        print(f'[{n}] Hello!')
-        print(f'[{n}] Hello again!')
+        q.put(f'[{n}] Hello!')
+        q.put(f'[{n}] Hello again!')
 
 for i in range(10):
     # create a new Thread object, telling it what function to run
