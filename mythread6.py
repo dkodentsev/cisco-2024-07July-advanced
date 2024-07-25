@@ -19,6 +19,8 @@ l = threading.Lock()  # create a new lock object
 q = queue.Queue()     # create a queue onto which functions can put output
 
 def add(n):
+    time.sleep(random.randint(0, 2))
+    print('\tPutting {n**2}')
     q.put(n ** 2)
 
 def get():
@@ -27,7 +29,7 @@ def get():
             time.sleep(1)
         value = q.get()
 
-        print(value)
+        print(f'Got {value}')
 
         if value == 81:
             break
