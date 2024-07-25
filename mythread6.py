@@ -26,19 +26,5 @@ def get():
         print(q.get())
 
 for i in range(10):
-    t = threading.Thread(target=hello, args=(i,))
+    t = threading.Thread(target=add, args=(i,))
     t.start()
-
-# join them together, meaning: wait for all of them to finish
-# have a while loop wait until the number of threads is down to 1
-while threading.active_count() > 1:
-    for one_thread in threading.enumerate():
-        if one_thread == threading.current_thread():
-            continue
-        one_thread.join(0.01)  # normally, join blocks
-
-print('Done!')
-
-# retrieve all of the data from the queue
-while not q.empty():
-    print(q.get())
