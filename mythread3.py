@@ -22,7 +22,7 @@ for i in range(10):
 
 # join them together, meaning: wait for all of them to finish
 # have a while loop wait until the number of threads is down to 1
-while threading.thread_count() > 1:
+while threading.active_count() > 1:
     for one_thread in threading.enumerate():
         if one_thread == threading.current_thread():
             continue
