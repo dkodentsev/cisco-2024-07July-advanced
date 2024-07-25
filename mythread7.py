@@ -16,7 +16,7 @@ with ThreadPoolExecutor(max_workers=10) as executor:
     all_results = []
 
     for i in range(10):
-        result = executor.submit(square, n)  # 1st arg is function, rest are args to it
+        result = executor.submit(square, i)  # 1st arg is function, rest are args to it
         all_results.append(result)
 
     print(all_results)
