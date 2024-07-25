@@ -1,18 +1,13 @@
 #!/usr/bin/env python3
 
-# if we want, we can create a ThreadPoolExecutor
-# this creates a pool of threads that can be reused for our functions
-# we can then submit our functions to the executor
-# it'll return a "future object," which will (eventually) have the result
 
-# the style of using ThreadPoolExecutor is more elegant and easier to understand
 
-from concurrent.futures import ThreadPoolExecutor, wait
+from concurrent.futures import ProcessPoolExecutor, wait
 
 def square(n):
     return n ** 2
 
-with ThreadPoolExecutor(max_workers=5) as executor:
+with ProcessPoolExecutor(max_workers=5) as executor:
     all_results = []
 
     for i in range(10):
