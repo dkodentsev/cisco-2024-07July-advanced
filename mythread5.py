@@ -6,6 +6,10 @@
 # - I start up a bunch of threads, telling them to execute that function
 # - I tell the threads to run
 
+# a queue object is kind of like a list, but it's guaranteed to be thread safe
+# we use the put method to add something to the end, and the get method to
+# retrieve from the beginning (FIFO, first in, first out)
+
 import time
 import random
 import threading
