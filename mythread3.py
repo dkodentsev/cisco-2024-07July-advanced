@@ -22,6 +22,8 @@ for i in range(10):
 
 # join them together, meaning: wait for all of them to finish
 for one_thread in threading.enumerate():
+    if one_thread == threading.current_thread():
+        continue
     one_thread.join()
 
 print('Done!')
