@@ -22,7 +22,9 @@ def add(n):
     q.put(n ** 2)
 
 def get():
-    while not q.empty():
+    while True:
+        if q.empty():
+            time.sleep(1)
         print(q.get())
 
 for i in range(10):
