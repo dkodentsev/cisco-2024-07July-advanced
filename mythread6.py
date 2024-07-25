@@ -18,16 +18,14 @@ import queue
 l = threading.Lock()  # create a new lock object
 q = queue.Queue()     # create a queue onto which functions can put output
 
-def hello(n):
-    time.sleep(random.randint(0, 3))
+def add(n):
+    q.put(n ** 2)
 
-    with l:
-        q.put(f'[{n}] Hello!')
-        q.put(f'[{n}] Hello again!')
+def get():
+    while not q.empty():
+        print(q.get())
 
 for i in range(10):
-    # create a new Thread object, telling it what function to run
-    # whatever arguments we want to pass are in the "args" kwargs
     t = threading.Thread(target=hello, args=(i,))
     t.start()
 
