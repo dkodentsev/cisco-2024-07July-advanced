@@ -23,5 +23,7 @@ with ThreadPoolExecutor(max_workers=5) as executor:
     # by default, wait will return its results only when all threads are done
     done, not_done = wait(all_results)
 
+    # done, not_done = wait(all_results, return_when=FIRST_COMPLETED)
+
     for one_item in done:
         print(one_item.result())
