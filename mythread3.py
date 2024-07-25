@@ -19,7 +19,6 @@ for i in range(10):
     # whatever arguments we want to pass are in the "args" kwargs
     t = threading.Thread(target=hello, args=(i,))
     t.start()
-    all_threads.append(t)
 
 # join them together, meaning: wait for all of them to finish
 for one_thread in threading.enumerate():
