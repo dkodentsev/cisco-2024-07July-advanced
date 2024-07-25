@@ -21,9 +21,11 @@ for i in range(10):
     t.start()
 
 # join them together, meaning: wait for all of them to finish
-for one_thread in threading.enumerate():
-    if one_thread == threading.current_thread():
-        continue
-    one_thread.join(0.01)
+# have a while loop wait until the number of threads is down to 1
+while threading.thread_count() > 1:
+    for one_thread in threading.enumerate():
+        if one_thread == threading.current_thread():
+            continue
+        one_thread.join(0.01)
 
 print('Done!')
